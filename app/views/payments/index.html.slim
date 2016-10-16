@@ -1,0 +1,28 @@
+| Payments:
+br
+br
+- if @payments.any?
+  table
+    thead
+     tr
+      th Date money was sent
+      th Currency
+      th Amount
+      th Status
+
+    tbody
+    - @payments.each do |cp|
+      tr
+        td = cp['created_at'].strftime("%a %d %b  %H:%M:%S")
+        td = cp['currency']
+        td = cp['amount']
+        td = cp['status']
+  br
+- else
+  br
+  | --No payments--
+  br
+br
+= link_to 'Create Payment', new_recipient_payment_path(@recipient)
+br
+= link_to 'All Recipients', recipients_path

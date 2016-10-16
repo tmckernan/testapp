@@ -1,0 +1,7 @@
+Small test rails app that uses a restful API.
+
+To do the following:
+- Authenticate against a restful API
+- Add recipients via API
+- Send them money via API
+- Check whether a payment was successful via API

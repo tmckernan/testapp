@@ -1,0 +1,9 @@
+p = "Send Money to #{@recipient.name}"
+= form_for @payment, url: recipient_payments_path, method: :post do |f|
+  | Currency:
+  = f.text_field :currency, placeholder: "USD, EUR or GBP,", required: true
+  br
+  | Amount:
+  = f.text_field :amount, placeholder: "500.50, 10.25, etc", required: true
+  br
+  = f.submit "add"

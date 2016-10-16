@@ -1,0 +1,18 @@
+| Recipients:
+br
+br
+- if @recipients.any?
+  - @recipients.each do |recipient|
+    = recipient.name
+    br
+    = link_to 'All Payments', recipient_payments_path(recipient)
+    | &nbsp;&nbsp;
+    = link_to 'Send Money', new_recipient_payment_path(recipient)
+    br
+    br
+- else
+  br
+  | --No recipients--
+  br
+br
+= link_to 'Add Recipient', new_recipient_path

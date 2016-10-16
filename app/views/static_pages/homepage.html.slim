@@ -1,0 +1,11 @@
+= link_to 'All Recipients', recipients_path
+br
+= link_to 'add recipient', new_recipient_path
+br
+br
+| Account
+br
+- if current_user.account
+  = button_to 'remove', '/account', method: :delete
+- else
+  = link_to 'add', new_account_path
